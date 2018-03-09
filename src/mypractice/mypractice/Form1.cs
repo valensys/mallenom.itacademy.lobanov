@@ -63,8 +63,21 @@ namespace mypractice
 			{
 				if((i > 5) && ((int)listBox1.Items[i] > 10) && ((int)listBox1.Items[i] < 100) && (listBox2.Items.Count < 20))
 					listBox2.Items.Add(listBox1.Items[i]);
-
 			}
+			listBox2.Sorted = true;
+
+			int sum = 0;
+			decimal mult = 1;
+
+			for (int i=0; i<listBox2.Items.Count; i++)
+			{
+				sum += (int)listBox2.Items[i];
+				mult *= (int)listBox2.Items[i];
+			}
+
+			string message = String.Format(" Сумма = {0} \n Произведение = {1}", sum, mult);
+
+			MessageBox.Show(message, "Result");
 		}
 	}
 }
