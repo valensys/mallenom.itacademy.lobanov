@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Windows.Forms;
 
-namespace mypractice
+namespace MyPractice
 {
 	public partial class Form1 : Form
 	{
