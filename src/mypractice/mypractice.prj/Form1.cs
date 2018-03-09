@@ -41,6 +41,8 @@ namespace MyPractice
 		{
 			listBox1.Items.Clear();
 			ArrayList numbers = new ArrayList(capacity);
+
+
 			for (int i=1; i<=numbers.Capacity; i++)
 			listBox1.Items.Add(i);
 		}
@@ -67,6 +69,11 @@ namespace MyPractice
 			string message = String.Format(" Сумма = {0} \n Произведение = {1}", sum, mult);
 
 			MessageBox.Show(message, "Result");
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
