@@ -1,20 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace MyPractice
 {
 	public partial class Form1 : Form
 	{
+		#region variables
+
 		private static int capacity = 100;
+
+		/// <summary> Создание экземпляра класса с методами <see cref="d"/></summary>
+
 		Getdigits d = new Getdigits();
+
+		/// <summary> Создание целочисленного списка <see cref="numbers"/></summary>
+
 		public IList<int> numbers;
+
+		#endregion
 
 		public Form1()
 		{
 			InitializeComponent();
 		}
+
+		#region useless_methods
 
 		private void Form1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
@@ -34,6 +45,8 @@ namespace MyPractice
 		{
 
 		}
+
+		#endregion
 
 		private void numericUpDown1_ValueChanged(object sender, EventArgs e)
 		{

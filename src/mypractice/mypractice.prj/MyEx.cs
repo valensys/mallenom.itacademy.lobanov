@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using MyPractice;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyPractice
 {
@@ -14,14 +10,18 @@ namespace MyPractice
 
 		public static int GetSum (this IEnumerable<int> enumerable)
 		{
+			sum = 0;
+
 			foreach (var item in enumerable)
-			sum += item;
+				sum += item;
 
 			return sum;
 		}
 
 		public static decimal GetMul(this IEnumerable<int> enumerable)
 		{
+			mul = 1;
+
 			foreach(var item in enumerable)
 				mul *= item;
 

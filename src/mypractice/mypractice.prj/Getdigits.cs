@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MyPractice
 {
@@ -18,6 +15,7 @@ namespace MyPractice
 
 		public int GetSum (IList<int> a1)
 		{
+			sum = 0;
 			foreach(var item in a1)
 				sum += item;
 			return sum;
@@ -25,6 +23,7 @@ namespace MyPractice
 
 		public decimal GetMul(IList<int> a1)
 		{
+			mul = 1;
 			foreach(var item in a1)
 				mul *= item;
 			return mul;
