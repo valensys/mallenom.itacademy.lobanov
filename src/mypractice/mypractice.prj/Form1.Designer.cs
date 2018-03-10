@@ -33,7 +33,6 @@
 			this.button2 = new System.Windows.Forms.Button();
 			this.listBox1 = new System.Windows.Forms.ListBox();
 			this.listBox2 = new System.Windows.Forms.ListBox();
-			this.textBox1 = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -97,21 +96,11 @@
 			this.listBox2.Size = new System.Drawing.Size(120, 108);
 			this.listBox2.TabIndex = 5;
 			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(16, 316);
-			this.textBox1.Multiline = true;
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(531, 61);
-			this.textBox1.TabIndex = 6;
-			this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(561, 395);
-			this.Controls.Add(this.textBox1);
 			this.Controls.Add(this.listBox2);
 			this.Controls.Add(this.listBox1);
 			this.Controls.Add(this.button2);
@@ -136,7 +125,6 @@
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.ListBox listBox1;
 		private System.Windows.Forms.ListBox listBox2;
-		private System.Windows.Forms.TextBox textBox1;
 	}
 }
 

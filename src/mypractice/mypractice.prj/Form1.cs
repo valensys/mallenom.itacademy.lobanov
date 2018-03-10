@@ -8,7 +8,7 @@ namespace MyPractice
 	public partial class Form1 : Form
 	{
 		private static int capacity = 100;
-
+		Getdigits d = new Getdigits();
 		public IList<int> numbers;
 
 		public Form1()
@@ -50,7 +50,6 @@ namespace MyPractice
 
 			foreach(var item in numbers)
 				listBox1.Items.Add(item);
-
 			
 		}
 
@@ -68,14 +67,12 @@ namespace MyPractice
 			}
 			listBox2.Sorted = true;
 
-			string message = String.Format(" Сумма = {0} \n Произведение = {1}", numbers.GetSum(), numbers.GetMul());
+			string message = String.Format
+				("                        --------EXTENSION-------\n Сумма = {0} \n Произведение = {1} \n\n" +
+				"                    --------JUST METHOD------- \n Сумма = {2} \n Произведение = {3}", 
+				numbers.GetSum(), numbers.GetMul(), d.GetSum(numbers), d.GetMul(numbers));
 
 			MessageBox.Show(message, "Result");
-		}
-
-		private void textBox1_TextChanged(object sender, EventArgs e)
-		{
-
-		}
+		}	
 	}
 }
