@@ -58,15 +58,22 @@ namespace MyPractice.Linq
 			_numbers.Clear();
 			listBox2.Items.Clear();
 
+			//Убираю первые 5 элементов в списке через цикл т.к. я не знаю как обработать индекс элемента 
+			//в запросе LINQ
+
 			for(int i = 1; i < listBox1.Items.Count; i++)
 				if(i > 5)
 					_numbers.Add((int)listBox1.Items[i]);
+
+			//Запрос LINQ
 
 			LINQuery =
 				 from number in _numbers
 				 where number > 10 && number < 100
 				 orderby number
 				 select number;
+				
+			//Добавление в ListBox2
 
 			foreach(var item in LINQuery)
 				listBox2.Items.Add(item);
@@ -77,6 +84,11 @@ namespace MyPractice.Linq
 				LINQuery.GetSum(), LINQuery.GetMul(), _d.GetSum(LINQuery), _d.GetMul(LINQuery));
 
 			MessageBox.Show(message, "Result");
+		}
+
+		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }
