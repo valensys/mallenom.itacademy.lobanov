@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace MyPractice
+namespace MyPractice.Linq
 {
-	public static class MyEx
+	public static class MyExtension
 	{
 		private static int sum = 0;
 		private static decimal mul = 1;

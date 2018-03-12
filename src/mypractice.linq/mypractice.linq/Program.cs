@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace MyPractice
+namespace MyPractice.Linq
 {
 	static class Program
 	{

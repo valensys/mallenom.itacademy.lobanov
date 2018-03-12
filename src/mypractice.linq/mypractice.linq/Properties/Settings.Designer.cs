@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace MyPractice.Properties {
+namespace MyPractice.Linq.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
