@@ -58,7 +58,7 @@ namespace MyPractice.Linq
 			_numbers.Clear();
 			listBox2.Items.Clear();
 
-			//Убираю первые 5 элементов в списке через цикл т.к. я не знаю как обработать индекс элемента 
+			//Убираю первые 5 элементов в списке через цикл т.к. не знаю как обработать индекс элемента 
 			//в запросе LINQ
 
 			for(int i = 1; i < listBox1.Items.Count; i++)
@@ -87,6 +87,11 @@ namespace MyPractice.Linq
 		}
 
 		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
 		{
 
 		}
