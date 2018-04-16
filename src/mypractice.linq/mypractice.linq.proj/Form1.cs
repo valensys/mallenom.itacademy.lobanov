@@ -14,11 +14,8 @@ namespace MyPractice.Linq
 		/// Объявление целочисленного списка <see cref="_numbers"/>
 		/// Объявление целочисленного списка для записи отобранных элементов <see cref="LINQuery"/>
 		/// </summary>
-
-		private int _capacity = 100;
+		Form2 f = new Form2();
 		private Getdigits _d = new Getdigits();
-		private Random _r = new Random();
-		private IList<int> _numbers;
 		IEnumerable<int> LINQuery;
 
 		public Form1()
@@ -31,21 +28,19 @@ namespace MyPractice.Linq
 
 		private void CollectionCapacity_ValueChanged(object sender, EventArgs e)
 		{
-			_capacity = (int)CollectionCapacity.Value;
+			f._capacity = (int)CollectionCapacity.Value;
 		}
 
-		/// <summary> Новый список случайных чисел размерности _capacity <see cref="CreateCollectionClick"/>
+		/// <summary> Новый список случайных чисел размерности _capacity из Form2 <see cref="CreateCollectionClick"/>
 		/// при нажатии на кнопку CreateCollection /// </summary>
 
 		private void CreateCollectionClick(object sender, EventArgs e)
 		{
 			listBox1.Items.Clear();
-			_numbers = new List<int>(_capacity);
 
-			for (int i=1; i<=_capacity; i++)
-			_numbers.Add(_r.Next(0,1000));
+			f.ShowDialog();
 
-			foreach(var item in _numbers)
+			foreach(var item in f._numbers)
 				listBox1.Items.Add(item);
 			
 		}
@@ -55,20 +50,20 @@ namespace MyPractice.Linq
 
 		private void ExtractFromCollectionClick(object sender, EventArgs e)
 		{
-			_numbers.Clear();
+			f._numbers.Clear();
 			listBox2.Items.Clear();
 
 			//Убираю первые 5 элементов в списке через цикл т.к. не знаю как обработать индекс элемента 
 			//в запросе LINQ
 
-			for(int i = 1; i < listBox1.Items.Count; i++)
-				if(i > 5)
-					_numbers.Add((int)listBox1.Items[i]);
+			for(int i = 0; i < listBox1.Items.Count; i++)
+				if(i > 4)
+					f._numbers.Add((int)listBox1.Items[i]);
 
 			//Запрос LINQ
 
 			LINQuery =
-				 from number in _numbers
+				 from number in f._numbers
 				 where number > 10 && number < 100
 				 orderby number
 				 select number;
@@ -84,16 +79,6 @@ namespace MyPractice.Linq
 				LINQuery.GetSum(), LINQuery.GetMul(), _d.GetSum(LINQuery), _d.GetMul(LINQuery));
 
 			MessageBox.Show(message, "Result");
-		}
-
-		private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-		}
-
-		private void Form1_Load(object sender, EventArgs e)
-		{
-
 		}
 	}
 }

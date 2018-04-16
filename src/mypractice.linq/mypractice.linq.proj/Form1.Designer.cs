@@ -87,7 +87,6 @@
 			this.listBox1.Name = "listBox1";
 			this.listBox1.Size = new System.Drawing.Size(120, 108);
 			this.listBox1.TabIndex = 4;
-			this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
 			// 
 			// listBox2
 			// 
@@ -122,7 +121,6 @@
 			this.KeyPreview = true;
 			this.Name = "Form1";
 			this.Text = "Form1";
-			this.Load += new System.EventHandler(this.Form1_Load);
 			((System.ComponentModel.ISupportInitialize)(this.CollectionCapacity)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
