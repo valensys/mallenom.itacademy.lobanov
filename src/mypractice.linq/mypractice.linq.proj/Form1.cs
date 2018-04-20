@@ -8,13 +8,13 @@ namespace MyPractice.Linq
 	public partial class Form1 : Form
 	{
 		/// <summary> 
-		/// Задание переменной для размерности коллекции <see cref="_capacity"/>
+		/// Задание переменной для размерности коллекции <see cref="capacity"/>
 		/// Создание экземпляра класса с методами <see cref="_d"/>
-		/// Экземпляр класса случайного числа от 0 до 1000 <see cref="_r"/>
-		/// Объявление целочисленного списка <see cref="_numbers"/>
+		/// Экземпляр класса случайного числа от 0 до 1000 <see cref="_randomNumber"/>
+		/// Объявление целочисленного списка <see cref="numbers"/>
 		/// Объявление целочисленного списка для записи отобранных элементов <see cref="LINQuery"/>
 		/// </summary>
-		Form2 f = new Form2();
+		Form2 form2 = new Form2();
 		private Getdigits _d = new Getdigits();
 		IEnumerable<int> LINQuery;
 
@@ -23,25 +23,27 @@ namespace MyPractice.Linq
 			InitializeComponent();
 		}
 
-		/// <summary> Новое значение _capacity <see cref="CollectionCapacity_ValueChanged"/>
+		/// <summary> Новое значение capacity <see cref="CollectionCapacity_ValueChanged"/>
 		/// при изменении значения в элементе NumericUpDown /// </summary>
 
 		private void CollectionCapacity_ValueChanged(object sender, EventArgs e)
 		{
-			f._capacity = (int)CollectionCapacity.Value;
+			form2.capacity = (int)CollectionCapacity.Value;
 		}
 
-		/// <summary> Новый список случайных чисел размерности _capacity из Form2 <see cref="CreateCollectionClick"/>
+		/// <summary> Новый список случайных чисел размерности capacity из Form2 <see cref="CreateCollectionClick"/>
 		/// при нажатии на кнопку CreateCollection /// </summary>
 
 		private void CreateCollectionClick(object sender, EventArgs e)
 		{
 			listBox1.Items.Clear();
 
-			f.ShowDialog();
+			form2.ShowDialog();
 
-			foreach(var item in f._numbers)
+			foreach(var item in form2.numbers)
+			{
 				listBox1.Items.Add(item);
+			}
 			
 		}
 
@@ -50,28 +52,31 @@ namespace MyPractice.Linq
 
 		private void ExtractFromCollectionClick(object sender, EventArgs e)
 		{
-			f._numbers.Clear();
+			form2.numbers.Clear();
 			listBox2.Items.Clear();
 
 			//Убираю первые 5 элементов в списке через цикл т.к. не знаю как обработать индекс элемента 
 			//в запросе LINQ
 
 			for(int i = 0; i < listBox1.Items.Count; i++)
-				if(i > 4)
-					f._numbers.Add((int)listBox1.Items[i]);
+			{
+				if(i > 4) form2.numbers.Add((int)listBox1.Items[i]);
+			}
 
 			//Запрос LINQ
 
 			LINQuery =
-				 from number in f._numbers
+				 from number in form2.numbers
 				 where number > 10 && number < 100
 				 orderby number
 				 select number;
-				
+
 			//Добавление в ListBox2
 
 			foreach(var item in LINQuery)
+			{
 				listBox2.Items.Add(item);
+			}
 
 			string message = String.Format
 				("	РЕЗУЛЬТАТ ИЗ РАСШИРЕНИЯ \n\n Сумма = {0} \n Произведение = {1} \n\n\n" +

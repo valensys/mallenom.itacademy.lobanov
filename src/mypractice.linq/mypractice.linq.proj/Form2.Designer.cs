@@ -15,6 +15,7 @@
 		{
 			if(disposing && (components != null))
 			{
+				_progress.ProgressChanged -= OnProgressChanged;
 				components.Dispose();
 			}
 			base.Dispose(disposing);
